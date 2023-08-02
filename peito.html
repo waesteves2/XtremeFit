@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treino de Peito</title>
+    <title>Treinos de Academia</title>
     <!-- Adicione o link para o Bootstrap CSS (opcional) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Treino de Peito</h1>
-        <div class="row justify-content-center">
+        <h1 class="text-center mb-4">Treinos de Academia</h1>
+        <div id="treinoContainer" class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
-                <div class="card">
+                <div id="treinoCard" class="card">
                     <img src="https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/supino-reto.gif" class="card-img-top" alt="Exercício de Peito">
                     <div class="card-body">
                         <h2 class="card-title">Supino Reto</h2>
@@ -24,8 +24,54 @@
                         <p class="card-text">Quantidade de Repetições: 8 a 10</p>
                     </div>
                 </div>
+                <div id="treinoCard2" class="card d-none">
+                    <img src="https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/supino-reto.gif" class="card-img-top" alt="Exercício de Peito">
+                    <div class="card-body">
+                        <h2 class="card-title">Treino 2</h2>
+                        <p class="card-text">
+                            Informações do treino 2...
+                        </p>
+                        <p class="card-text">Quantidade de Séries: 4</p>
+                        <p class="card-text">Quantidade de Repetições: 10 a 12</p>
+                    </div>
+                </div>
+                <!-- Adicione mais treinos com a mesma estrutura aqui -->
             </div>
         </div>
     </div>
+
+    <script>
+        const treinos = ["treinoCard", "treinoCard2"]; // Adicione os IDs dos elementos que representam os treinos
+
+        let currentTreino = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function showNextTreino() {
+            const currentCard = document.getElementById(treinos[currentTreino]);
+            currentCard.classList.add("d-none");
+
+            currentTreino = (currentTreino + 1) % treinos.length;
+
+            const nextCard = document.getElementById(treinos[currentTreino]);
+            nextCard.classList.remove("d-none");
+        }
+
+        function handleTouchStart(event) {
+            touchStartX = event.touches[0].clientX;
+        }
+
+        function handleTouchEnd(event) {
+            touchEndX = event.changedTouches[0].clientX;
+
+            if (touchEndX < touchStartX) {
+                // Deslizou para a esquerda, mostra o próximo treino
+                showNextTreino();
+            }
+        }
+
+        document.getElementById("treinoContainer").addEventListener("touchstart", handleTouchStart);
+        document.getElementById("treinoContainer").addEventListener("touchend", handleTouchEnd);
+    </script>
 </body>
 </html>
