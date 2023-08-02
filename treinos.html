@@ -26,18 +26,29 @@
         .social-icons {
             display: flex;
             justify-content: center;
-
+            align-items: center; /* Centralizar verticalmente */
             font-size: 35px;
-
         }
 
         .social-icons a {
             margin: 0 10px;
         }
+
+        .container {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo do card com transparência */
+            border: 1px solid white; /* Borda branca */
+            border-radius: 10px; /* Borda arredondada */
+        }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-8">
                 <div class="card">
@@ -49,19 +60,17 @@
                             <button class="btn btn-primary neon-button" onclick="abrirTreino('biceps')">Treino de Bíceps</button>
                             <button class="btn btn-primary neon-button" onclick="abrirTreino('triceps')">Treino de Tríceps</button>
                             <button class="btn btn-primary neon-button" onclick="abrirTreino('aerobico')">Aeróbico</button>
-
-
-
-                            <div class="social-icons mt-4">
-                                <a href="https://www.facebook.com/thomazinisportsacademia/" target="_blank" rel="noopener">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a href="https://www.instagram.com/thomazinisports/" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="URL_DO_SEU_WHATSAPP" target="_blank" rel="noopener">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
+                        </div>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/thomazinisportsacademia/" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/thomazinisports/" target="_blank" rel="noopener">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="URL_DO_SEU_WHATSAPP" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
