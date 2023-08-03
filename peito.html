@@ -49,7 +49,6 @@
             padding: 10px; /* Espaçamento interno do conteúdo do card */
         }
 
-
         .info-icon {
             cursor: pointer;
             color: #00ffff; /* Cor do ícone de informação */
@@ -61,8 +60,6 @@
             font-size: 14px; /* Tamanho do texto explicativo */
             margin-top: 10px;
         }
-
-       
     </style>
 </head>
 <body>
@@ -78,18 +75,16 @@
                         </p>
                         <p class="card-text">Quantidade de Séries: 3</p>
                         <p class="card-text">Quantidade de Repetições: 8 a 15</p>
-                        <span class="info-icon" onclick="toggleInfo()"> <!-- Adicione o ícone e atribua a função onclick -->
+                        <span class="info-icon" onclick="toggleInfo('info1')"> <!-- Adicione o ícone e atribua a função onclick -->
                             <i class="fas fa-info-circle"></i>
                         </span>
-                        <p class="card-info d-none">
-
+                        <p id="info1" class="card-info d-none">
                             Técnica correta: Aprenda a técnica adequada de supino com um profissional qualificado. Posicione os pés firmemente no chão, mantenha a lombar apoiada no banco, segure a barra com a pegada adequada, abaixe a barra controladamente até o peito e empurre-a de volta para a posição inicial.
                             <br><br>
                             Progressão de carga: Progressivamente aumente a carga que você levanta, mas sempre mantenha a forma correta. O progresso gradual ajudará a fortalecer seus músculos e melhorar seu supino ao longo do tempo.
                             <br><br>
                             Trabalhe a estabilidade: Treine os músculos estabilizadores do ombro, do tronco e do core. Uma boa estabilidade é essencial para manter uma posição segura durante o movimento do supino e evitar lesões.
                         </p>
-                        
                     </div>
                 </div>
                 <div id="treinoCard2" class="card d-none treino-card">
@@ -97,13 +92,14 @@
                     <div class="card-body">
                         <h2 class="card-title">Supino Inclinado</h2>
                         <p class="card-text">
-                            Antes de iniciar o supino inclinado com pesos mais pesados, faça um aquecimento adequado para preparar os músculos e articulações envolvidos. Aqueça os ombros e o peitoral com exercícios leves e movimentos dinâmicos.                        </p>
+                            Antes de iniciar o supino inclinado com pesos mais pesados, faça um aquecimento adequado para preparar os músculos e articulações envolvidos. Aqueça os ombros e o peitoral com exercícios leves e movimentos dinâmicos.
+                        </p>
                         <p class="card-text">Quantidade de Séries: 3</p>
                         <p class="card-text">Quantidade de Repetições: 8 a 15</p>
-                        <span class="info-icon" onclick="toggleInfo()"> <!-- Adicione o ícone e atribua a função onclick -->
+                        <span class="info-icon" onclick="toggleInfo('info2')"> <!-- Adicione o ícone e atribua a função onclick -->
                             <i class="fas fa-info-circle"></i>
                         </span>
-                        <p class="card-info d-none">
+                        <p id="info2" class="card-info d-none">
                             Posição correta no banco: Ao se deitar no banco inclinado, ajuste a inclinação para cerca de 30 a 45 graus. Mantenha os pés apoiados no chão para obter estabilidade e evitar arquear as costas.
                             <br><br>
                             Pegada adequada: Segure a barra com uma pegada um pouco mais ampla do que a largura dos ombros. Isso permitirá que você recrute melhor os músculos do peitoral durante o movimento.
@@ -116,7 +112,6 @@
             </div>
         </div>
     </div>
-
 
     <script>
         const treinos = ["treinoCard", "treinoCard2"]; // Adicione os IDs dos elementos que representam os treinos
@@ -151,9 +146,8 @@
         document.getElementById("treinoContainer").addEventListener("touchstart", handleTouchStart);
         document.getElementById("treinoContainer").addEventListener("touchend", handleTouchEnd);
 
-
-        function toggleInfo() {
-            const infoText = document.querySelector(".card-info");
+        function toggleInfo(infoId) {
+            const infoText = document.getElementById(infoId);
             infoText.classList.toggle("d-none");
         }
     </script>
