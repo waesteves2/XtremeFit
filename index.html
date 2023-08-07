@@ -63,15 +63,33 @@
             box-shadow: none; /* Remove a sombra ao focar no input */
         }
 
+        .social-icons a {
+            color: #00ffff;
+        }
+
+        .social-icons a:hover,
+        .social-icons a:active {
+            animation: pulse 1s infinite;
+        }
+
         .social-icons {
             display: flex;
             justify-content: center;
             align-items: center; /* Centralizar verticalmente */
             font-size: 35px;
+            
         }
 
         .social-icons a {
-            margin: 0 10px;
+            margin: 0 25px;
+            animation: pulse 1s infinite; /* Aplica a animação pulsante nos ícones */
+            
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
 
