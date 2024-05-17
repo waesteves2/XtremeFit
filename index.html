@@ -1,125 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academia Tomazzini</title>
-    <!-- Adicione os links para o Bootstrap e o jQuery -->
+    <!-- Links para Bootstrap, jQuery e FontAwesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-        /* Estilo para o efeito neon */
-        .neon-pulse {
+        /* Variáveis de cor */
+        :root {
+            --neon-color: #00ffff;
+            --background-color: black;
+            --text-color: white;
+            --button-hover-color: #00d1d1;
+            --button-active-color: #00a3a3;
+            --card-bg-color: rgba(0, 0, 0, 0.7);
+            --input-bg-color: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--text-color);
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--neon-color);
             animation: neon-pulse 1s infinite;
         }
 
         @keyframes neon-pulse {
-            0% { box-shadow: 0 0 10px #00ffff; }
-            50% { box-shadow: 0 0 20px #00ffff; }
-            100% { box-shadow: 0 0 10px #00ffff; }
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px var(--neon-color);
+            }
+
+            50% {
+                box-shadow: 0 0 20px var(--neon-color);
+            }
         }
 
-        /* Estilos para personalizar o formulário */
-        body {
-            background-color: black; /* Fundo preto */
-            color: white; /* Texto branco */
-        }
-
-        .container {
-            height: 100vh; /* Altura total da tela */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            max-height: 400px;
-
-        }
-
-        .card {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo do card com transparência */
-            border: 1px solid white; /* Borda com 1px de espessura na cor branca */
-            border-radius: 10px; /* Borda arredondada */
-            box-shadow: 0 0 10px #00ffff; /* Efeito de brilho inicial */
-            overflow: hidden; /* Impede a exibição da barra de rolagem */
-            top: 60px;
-
-        }
-
-        .form-label {
-            font-size: 24px; /* Aumenta o tamanho da fonte das labels para dispositivos móveis */
+        .form-label,
+        .form-control {
+            font-size: 1.25rem;
         }
 
         .form-control {
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo do input com transparência */
-            color: white; /* Texto branco */
-            border: none; /* Sem borda */
-            border-radius: 5px; /* Borda arredondada */
-            font-size: 24px; /* Aumenta o tamanho da fonte dos inputs para dispositivos móveis */
+            background-color: var(--input-bg-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
         }
 
         .form-control:focus {
-            box-shadow: none; /* Remove a sombra ao focar no input */
+            box-shadow: none;
         }
 
-        .social-icons a {
-            color: #00ffff;
+        .btn-primary {
+            background-color: var(--neon-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
         }
 
-        .social-icons a:hover,
-        .social-icons a:active {
-            animation: pulse 1s infinite;
+        .btn-primary:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .btn-primary:active {
+            background-color: var(--button-active-color);
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            align-items: center; /* Centralizar verticalmente */
-            font-size: 35px;
-            
+            align-items: center;
+            font-size: 2rem;
+            margin-top: 2rem;
         }
 
         .social-icons a {
-            margin: 0 25px;
-            animation: pulse 1s infinite; /* Aplica a animação pulsante nos ícones */
-            
+            color: var(--neon-color);
+            margin: 0 1rem;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .social-icons a:hover,
+        .social-icons a:active {
+            transform: scale(1.1);
         }
 
+        label {
 
-        .btn-primary {
-            background-color: #00ffff; /* Cor turquesa */
-            border: none; /* Sem borda */
-            border-radius: 5px; /* Borda arredondada */
-            font-size: 24px; /* Aumenta o tamanho da fonte do botão para dispositivos móveis */
+            color: white;
         }
 
-        .btn-primary:hover {
-            background-color: #00d1d1; /* Cor turquesa mais escura ao passar o mouse */
-        }
+        h1 {
 
-        .btn-primary:active {
-            background-color: #00a3a3; /* Cor turquesa mais escura ao clicar no botão */
+            color: white;
         }
-
-        /* Centralizar o botão no card */
-        .d-grid {
-            justify-content: center;
-        }
-
-        
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="card neon-pulse">
+            <div class="card">
                 <div class="card-body">
                     <h1 class="text-center mb-4">Login</h1>
                     <form id="loginForm">
@@ -131,8 +131,7 @@
                             <label for="password" class="form-label">Senha:</label>
                             <input type="password" id="password" class="form-control" required>
                         </div>
-                        <div class="d-grid gap-2">
-                            <!-- Aplicar a classe "neon-button" no botão de login -->
+                        <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </div>
                     </form>
@@ -141,11 +140,7 @@
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-
-    <div class="social-icons mt-4">
+    <div class="social-icons">
         <a href="https://www.facebook.com/thomazinisportsacademia/" target="_blank" rel="noopener">
             <i class="fab fa-facebook"></i>
         </a>
@@ -158,14 +153,12 @@
     </div>
 
     <script>
-        $("#loginForm").submit(function(event) {
+        $("#loginForm").submit(function (event) {
             event.preventDefault();
             var username = $("#username").val();
             var password = $("#password").val();
 
-            // Verifica o usuário e a senha
             if (username === "waesteves" && password === "362260") {
-                // Redireciona para a outra página se o login for bem-sucedido
                 window.location.href = "./treinos.html";
             } else {
                 alert("Usuário ou senha incorretos. Tente novamente.");
@@ -173,4 +166,5 @@
         });
     </script>
 </body>
+
 </html>
